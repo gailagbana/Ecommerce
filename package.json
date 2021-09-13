@@ -1,0 +1,25 @@
+{
+  "name": "node-template",
+  "version": "1.0.0",
+  "description": "Boilerplate for my node applications",
+  "devDependencies": {
+    "concurrently": "^6.2.1"
+  },
+  "scripts": {
+    "start": "cd server && npm run start",
+    "server": "cd server && npm run dev",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "nyc --reporter=html mocha --recursive -w -c || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noguntuberu/node-template.git"
+  },
+  "author": "Oguntuberu Nathan O.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noguntuberu/node-template/issues"
+  },
+  "homepage": "https://github.com/noguntuberu/node-template#readme"
+}

@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/noguntuberu/node-template/issues"
   },
-  "homepage": "https://github.com/noguntuberu/node-template#readme"
+  "homepage": "https://github.com/noguntuberu/node-template#readme",
+  "dependencies": {
+    "reactstrap": "^8.10.0"
+  }
 }

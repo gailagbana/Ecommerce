@@ -1,0 +1,103 @@
+.navbar {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 50;
+}
+.navbar__logo h2 {
+  color: #f4f4f4;
+  font-size: 16px;
+  cursor: default;
+  font-weight: bold !important;
+}
+.navbar__links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar__links:hover {
+  color: #333;
+}
+.navbar__links > li {
+  padding-left: 20px;
+}
+.navbar__links > li > a {
+  text-decoration: none;
+  color: #f4f4f4;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.navbar__links > li > a > span {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+.shop:hover {
+  color: rgb(102, 102, 102);
+  cursor: pointer;
+}
+.cart__link {
+  padding: 5px;
+  border-radius: 8px;
+  background: black;
+}
+.cart__link:hover {
+  color: rgb(102, 102, 102);
+  cursor: pointer;
+}
+.cartlogo__badge {
+  width: 30px;
+  height: 30px;
+  background: #f4f4f4;
+  border-radius: 50%;
+  margin-left: 8px;
+  color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+}
+.searchlogo:hover {
+  color: rgb(102, 102, 102);
+  cursor: pointer;
+}
+.userlogo:hover {
+  color: rgb(102, 102, 102);
+  cursor: pointer;
+}
+.harmburger__menu {
+  width: 30px;
+  height: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.harmburger__menu > div {
+  width: 100%;
+  height: 3px;
+  background: rgb(102, 102, 102);
+}
+.harmburger__menu:hover > div {
+  background: #f4f4f4;
+  cursor: pointer;
+}
+@media (max-width: 960px) {
+  .navbar__links {
+    display: none;
+  }
+  .harmburger__menu {
+    display: flex;
+  }
+}
+@media (max-width: 500px) {
+  .navbar__logo h2 {
+    font-size: 14px;
+  }
+}

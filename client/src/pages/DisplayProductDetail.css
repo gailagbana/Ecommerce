@@ -1,0 +1,29 @@
+.productdetail {
+  max-width: 1300px;
+  margin: 16px auto;
+  display: flex;
+}
+.productdetail__left {
+  display: flex;
+  flex: 0.8;
+}
+.left__image {
+  margin: 8px;
+  flex: 0.6px;
+}
+.left__info {
+  margin: 18px;
+  flex: 0.4;
+  background: #f4f9f9;
+  height: fit-content;
+  font-size: 12px;
+}
+.left__name {
+  font-weight: bold;
+  font-size: 18px;
+}
+.left__info > p,
+.right__info > p {
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}

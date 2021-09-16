@@ -23,7 +23,7 @@ const MenuSideDrawer = ({ show, click }) => {
           </Link>
         </li>
         <li>
-          <Link to="/cart" className="menusidedrawer__cart">
+          <Link to="/cart/id" className="menusidedrawer__cart">
             <i className="fas fa-shopping-cart"></i>
             <span>
               Cart

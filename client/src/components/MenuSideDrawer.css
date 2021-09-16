@@ -1,5 +1,5 @@
-.sidedrawer {
-  width: 70%;
+.menusidedrawer {
+  width: 50%;
   height: 100vh;
   background-color: #fff;
   position: fixed;
@@ -12,19 +12,19 @@
   flex-direction: column;
   justify-content: center;
 }
-.sidedrawer.show {
+.menusidedrawer.show {
   transform: translateX(0);
 }
-.sidedrawer__links {
+.menusidedrawer__links {
   display: flex;
   flex-direction: column;
   list-style: none;
 }
-.sidedrawer__links > li {
+.menusidedrawer__links > li {
   display: flex;
   align-items: center;
 }
-.sidedrawer__links > li > a {
+.menusidedrawer__links > li > a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,17 +35,17 @@
   color: black;
   font-size: 20px;
 }
-.sidedrawer__links > li > a:hover {
+.menusidedrawer__links > li > a:hover {
   background: black;
   color: #f4f4f4;
   cursor: pointer;
 }
-.sidedrawer__links > li > a > span {
+.menusidedrawer__links > li > a > span {
   display: flex;
   align-items: center;
   margin-left: 8px;
 }
-.sidedrawer__cartbadge {
+.menusidedrawer__cartbadge {
   width: 30px;
   height: 30px;
   background: #f4f4f4;
@@ -58,20 +58,20 @@
   text-align: center;
   font-size: 14px;
 }
-.sidedrawer__link
+.menusidedrawer__link
   > li
   > a
   > span
-  .sidedrawer__cartbadge
-  .sidedrawer__shop
-  .sidedrawer__user
-  .sidedrawer__search {
+  .menusidedrawer__cartbadge
+  .menusidedrawer__shop
+  .menusidedrawer__user
+  .menusidedrawer__search {
   background: #f4f4f4;
   color: #171717;
 }
 
 @media (min-width: 960px) {
-  .sidedrawer {
+  .menusidedrawer {
     display: none;
   }
 }

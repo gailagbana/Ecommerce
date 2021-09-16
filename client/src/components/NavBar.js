@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = ({ click }) => {
+const NavBar = ({ click, cart }) => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <h2>MYSTICAL HUGGERS</h2>
+        <Link to="/">MYSTICAL HUGGERS</Link>
       </div>
 
       <ul className="navbar__links">
@@ -24,15 +24,14 @@ const NavBar = ({ click }) => {
             <i class="fas fa-search"></i>
           </div>
         </li>
-        {/* <li>
-          <Link to="/cart" className="cart__link">
+        <li>
+          <div className="cart__link" onClick={cart}>
             <i className="fas fa-shopping-cart"></i>
             <span>
-              Cart
               <span className="cartlogo__badge">0</span>
             </span>
-          </Link>
-        </li> */}
+          </div>
+        </li>
       </ul>
 
       <div className="harmburger__menu" onClick={click}>

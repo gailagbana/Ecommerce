@@ -13,7 +13,7 @@ const DisplayProductDetail = () => {
           <p className="left__name">Product 1</p>
           <p>Price : $200.99</p>
           <p>
-            description: dnsjncd fsdj fjdsks djkwledewkld fwlkejdwelkd dwekljd
+            Description: dnsjncd fsdj fjdsks djkwledewkld fwlkejdwelkd dwekljd
             lwjkd wjlkdwdjlwkd wljdkjwke dewjkldw
           </p>
         </div>

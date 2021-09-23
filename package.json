@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/noguntuberu/node-template#readme",
   "dependencies": {
+    "axios": "^0.21.4",
     "reactstrap": "^8.10.0"
   }
 }

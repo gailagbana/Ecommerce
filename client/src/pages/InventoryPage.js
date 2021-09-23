@@ -1,7 +1,23 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import "./InventoryPage.css";
 import Inventory from "../components/Inventory";
 
+import { getInventories as allInventories } from "../redux/actions/inventoryActions";
+
 const InventoryPage = () => {
+  const dispatch = useDispatch();
+
+  const { loading } = useSelector((state) => state.getInventories);
+  const { payload, error } = useSelector(
+    (state) => state.getInventories.inventories
+  );
+
+  useEffect(() => {
+    dispatch(allInventories());
+  }, [dispatch]);
+
   return (
     <div className="inventorypage">
       <div className="inventorypage__heading">
@@ -20,11 +36,27 @@ const InventoryPage = () => {
         </div>
       </div>
       <div className="display__inventories">
-        <Inventory />
-        <Inventory />
-        <Inventory />
-        <Inventory />
-        <Inventory />
+        {loading ? (
+          <h2>Loading...</h2>
+        ) : error != null ? (
+          <h2>{error}</h2>
+        ) : (
+          payload.map((inventory) => {
+            return (
+              <Inventory
+                key={inventory.id}
+                name={inventory.name}
+                description={inventory.description}
+                price={inventory.price}
+                quantity={inventory.quantity}
+                imageUrl={inventory.imageUrl}
+                inventoryId={inventory.id}
+                // sellerId={inventory.sellerId}
+                // categoryId={inventory.categoryId}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const inventoryService = new InventoryService(inventoryController, inventorySche
 
 try {
     router
-        .use(isAuthenticated)
+        // .use(isAuthenticated)
         .post('/', async (request, response, next) => {
             request.payload = await inventoryService.createInventory(request, next);
             next();
@@ -20,8 +20,8 @@ try {
             next();
         })
         .get('/filter/inventories', async (request, response, next) => {
-            request.payload = await inventoryService.readInventoryByFilter(request, next);
-            next();
+            // request.payload = await inventoryService.readInventoryByFilter(request, next);
+            // next();
         })
         .get('/:id', async (request, response, next) => {
             request.payload = await inventoryService.readInventoryById(request, next);

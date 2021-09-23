@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
 import "./Inventory.css";
-import inventory_image1 from "../Assets/inventory_1.jpeg";
+//import inventory_image1 from "../assets/inventory_1.jpeg";
 
-const Inventory = () => {
+const Inventory = ({
+  inventoryId,
+  imageUrl,
+  name,
+  price,
+  description,
+  quantity,
+}) => {
   return (
-    <Link to="/inventory/id" className="inventory">
+    <Link to={`/inventory/${inventoryId}`} className="inventory">
       <div className="inventory__info">
-        <img src={inventory_image1} alt="" />
+        <img src={imageUrl} alt={description} />
 
-        <p className="info__name"> Prodduct 1 a baga anad </p>
-        <p className="info__price">$200.99</p>
-        <p className="info__extradetail"> Pre Order</p>
+        <p className="info__name"> {name}</p>
+        <p className="info__price">${price}</p>
+        <p className="info__extradetail"> {quantity} available</p>
       </div>
     </Link>
   );

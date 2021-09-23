@@ -2,6 +2,7 @@
   color: white;
   text-decoration: none;
 }
+
 .inventory:hover {
   cursor: pointer;
   color: rgb(102, 102, 102);
@@ -15,7 +16,12 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
+.inventory__info > img {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+  border-radius: 8px;
+}
 .inventory__info > p {
   margin-bottom: 4px;
 }

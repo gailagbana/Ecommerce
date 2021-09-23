@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Components
-import ServerConnected from "./components/ServerConnected";
+//import ServerConnected from "./components/ServerConnected";
 import NavBar from "./components/NavBar";
 import MenuBackdrop from "./components/MenuBackdrop";
 import MenuSideDrawer from "./components/MenuSideDrawer";
@@ -14,7 +14,8 @@ import HomePage from "./pages/HomePage";
 //import CategoryPage from "./pages/CategoryPage";
 import InventoryPage from "./pages/InventoryPage";
 import CartPage from "./pages/CartPage";
-import DisplayProductDetail from "./pages/DisplayProductDetail";
+import DisplayInventoryDetails from "./pages/DisplayInventoryDetails";
+import Login from "./pages/Login";
 
 function App() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -37,10 +38,15 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/inventory" component={InventoryPage} />
           <Route exact path="/cart/:id" component={CartPage} />
-          <Route exact path="/inventory/id" component={DisplayProductDetail} />
+          <Route exact path="/login" component={Login} />
+          <Route
+            exact
+            path="/inventory/:id"
+            component={DisplayInventoryDetails}
+          />
         </Switch>
       </main>
-      <ServerConnected />
+      {/* <ServerConnected /> */}
     </Router>
   );
 }

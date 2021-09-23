@@ -34,8 +34,8 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(morgan);
 
 /** Route Middleware */
-//app.use('/', require('./src/routes/_config'));
-app.use('/test', require('./src/routes/_test'));
+app.use('/', require('./src/routes/_config'));
+//app.use('/test', require('./src/routes/_test'));
 
 /** */
 app.listen(APP_PORT, () => {

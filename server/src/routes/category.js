@@ -4,7 +4,7 @@ const Controller = require('../controllers/index');
 const categorySchemaValidator = require('../validators/category');
 const CategoryService = require('../services/category/category.service');
 
-const { isAdmin, isAuthenticated, isSeller } = require('../middlewares/auth');
+const { isAdmin, isAuthenticated, isSeller } = require('../middlewares');
 const categoryController = new Controller('Category');
 const categoryService = new CategoryService(categoryController, categorySchemaValidator);
 

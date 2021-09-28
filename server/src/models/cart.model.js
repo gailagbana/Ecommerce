@@ -11,10 +11,10 @@ const CartSchema = new Schema({
         required: true,
         unique: true,
     },
-    productId: {
+    cartInventory: {
         type: Array,
         required: true,
-        default: [],
+        default: {},
     },
     isActive: {
         type: Boolean,

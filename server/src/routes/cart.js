@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Controller = require('../controllers/index');
 const cartSchemaValidator = require('../validators/cart');
 
-const { isAuthenticated } = require('../middlewares/auth');
+const { isAuthenticated } = require('../middlewares');
 const cartController = new Controller('Cart');
 const SampleService = require('../services/cart/cart.service');
 

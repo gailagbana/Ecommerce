@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Controller = require('../controllers/index');
 const storeSchemaValidator = require('../validators/store');
 
-const { isAdmin, isSeller, isAdminOrSeller, isAuthenticated } = require('../middlewares/auth');
+const { isAdmin, isSeller, isAdminOrSeller, isAuthenticated } = require('../middlewares');
 const storeController = new Controller('Store');
 const SampleService = require('../services/store/store.service');
 

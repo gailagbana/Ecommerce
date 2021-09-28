@@ -3,24 +3,38 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Components
 //import ServerConnected from "./components/ServerConnected";
-import NavBar from "./components/NavBar";
-import MenuBackdrop from "./components/MenuBackdrop";
-import MenuSideDrawer from "./components/MenuSideDrawer";
-import CartSideDrawer from "./components/CartSideDrawer";
-import CartBackdrop from "./components/CartBackdrop";
-
+import {
+  CartBackdrop,
+  CartSideDrawer,
+  MenuBackdrop,
+  MenuSideDrawer,
+  NavBar,
+  useToken,
+} from "./components";
 //Pages
-import HomePage from "./pages/HomePage";
-//import CategoryPage from "./pages/CategoryPage";
-import InventoryPage from "./pages/InventoryPage";
-import CartPage from "./pages/CartPage";
-import DisplayInventoryDetails from "./pages/DisplayInventoryDetails";
-import Login from "./pages/Login";
+import {
+  Login,
+  SignUp,
+  CartPage,
+  HomePage,
+  InventoryDetails,
+  InventoryPage,
+} from "./pages";
+
+// function setToken(userToken) {
+//   sessionStorage.setItem("token", JSON.stringify(userToken));
+// }
 
 function App() {
   const [menuToggle, setMenuToggle] = useState(false);
 
   const [cartToggle, setCartToggle] = useState(false);
+
+  const { token, setToken } = useToken();
+
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
 
   return (
     <Router>
@@ -39,11 +53,8 @@ function App() {
           <Route exact path="/inventory" component={InventoryPage} />
           <Route exact path="/cart/:id" component={CartPage} />
           <Route exact path="/login" component={Login} />
-          <Route
-            exact
-            path="/inventory/:id"
-            component={DisplayInventoryDetails}
-          />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/inventory/:id" component={InventoryDetails} />
         </Switch>
       </main>
       {/* <ServerConnected /> */}

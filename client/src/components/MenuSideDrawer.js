@@ -1,4 +1,4 @@
-import "./MenuSideDrawer.css";
+import "./index.css";
 import { Link } from "react-router-dom";
 
 const MenuSideDrawer = ({ show, click }) => {
@@ -23,18 +23,18 @@ const MenuSideDrawer = ({ show, click }) => {
           </Link>
         </li>
         <li>
+          <div className="menusidedrawer__search">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+          </div>
+        </li>
+        <li>
           <Link to="/cart/:id" className="menusidedrawer__cart">
             <i className="fas fa-shopping-cart"></i>
             <span>
               Cart
               <span className="menusidedrawer__cartbadge">0</span>
             </span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/Search" className="menusidedrawer__search">
-            <i class="fas fa-search"></i>
-            <span>Search</span>
           </Link>
         </li>
       </ul>

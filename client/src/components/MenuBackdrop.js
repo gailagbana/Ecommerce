@@ -1,4 +1,4 @@
-import "./MenuBackdrop.css";
+import "./index.css";
 
 const MenuBackdrop = ({ show, click }) => {
   return show && <div className="menubackdrop" onClick={click}></div>;

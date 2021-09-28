@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import inventory_1 from "../assets/inventory_1.jpeg";
 
-import "./CartSideDrawer.css";
+import "./index.css";
 
 const CartSideDrawer = ({ show, cart }) => {
   const cartSideDrawerClass = ["cartsidedrawer"];

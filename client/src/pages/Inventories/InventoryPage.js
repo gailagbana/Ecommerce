@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import "./InventoryPage.css";
-import Inventory from "../components/Inventory";
-
-import { getInventories as allInventories } from "../redux/actions/inventoryActions";
+import "../index.css";
+import { getInventories as allInventories } from "../../redux/actions/inventoryActions";
+import { Inventory } from "../../components";
 
 const InventoryPage = () => {
   const dispatch = useDispatch();

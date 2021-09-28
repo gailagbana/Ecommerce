@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./Inventory.css";
-//import inventory_image1 from "../assets/inventory_1.jpeg";
+import "./index.css";
+//import inventory_image1 from "../../assets/inventory_1.jpeg";
 
 const Inventory = ({
   inventoryId,

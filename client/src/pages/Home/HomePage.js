@@ -1,9 +1,10 @@
 import { Link, useHistory } from "react-router-dom";
 
-import "./HomePage.css";
-import product1 from "../assets/product_1.jpeg";
-import product2 from "../assets/product_2.jpeg";
-import homepage_video from "../assets/homepage_video.mp4";
+import "../index.css";
+
+import product1 from "../../assets/product_1.jpeg";
+import product2 from "../../assets/product_2.jpeg";
+import homepage_video from "../../assets/homepage_video.mp4";
 
 const HomePage = () => {
   let history = useHistory();

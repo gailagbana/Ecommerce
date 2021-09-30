@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Controller = require('../controllers/index');
 const userSchemaValidator = require('../validators/user');
 
-const { isAdmin, isAuthenticated } = require('../middlewares');
+// const { isAdmin, isAuthenticated } = require('../middlewares/auth');
 const userController = new Controller('User');
 const UserService = require('../services/user/user.service');
 

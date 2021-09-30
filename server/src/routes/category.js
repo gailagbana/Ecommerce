@@ -4,13 +4,13 @@ const Controller = require('../controllers/index');
 const categorySchemaValidator = require('../validators/category');
 const CategoryService = require('../services/category/category.service');
 
-const { isAdmin, isAuthenticated, isSeller } = require('../middlewares');
+// const { isAdmin, isAuthenticated, isSeller } = require('../middlewares');
 const categoryController = new Controller('Category');
 const categoryService = new CategoryService(categoryController, categorySchemaValidator);
 
 try {
     router
-        .use(isAuthenticated)
+        //.use(isAuthenticated)
         .post('/', async (request, response, next) => {
             request.payload = await categoryService.createCategory(request, next);
             next();

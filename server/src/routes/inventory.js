@@ -4,7 +4,7 @@ const Controller = require('../controllers/index');
 const inventorySchemaValidator = require('../validators/inventory');
 const InventoryService = require('../services/inventory/inventory.service');
 
-const { isAdmin, isSeller, isAuthenticated } = require('../middlewares');
+// const { isAdmin, isSeller, isAuthenticated } = require('../middlewares');
 const inventoryController = new Controller('Inventory');
 const inventoryService = new InventoryService(inventoryController, inventorySchemaValidator);
 

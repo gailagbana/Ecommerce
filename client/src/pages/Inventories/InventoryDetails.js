@@ -1,9 +1,10 @@
 import "../index.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getInventoryDetails } from "../../redux/actions/inventoryActions";
-import { addToCart } from "../../redux/actions/cartActions";
+//import { addToCart } from "../../redux/actions/cartActions";
+import CartContext from "../../store/cartContext";
 
 const InventoryDetails = ({ match, history }) => {
   const [quantity, setQuantity] = useState(1);
@@ -22,9 +23,25 @@ const InventoryDetails = ({ match, history }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
-  const addToCartHandler = () => {
-    dispatch(addToCart(payload.id, quantity));
-    //history.push(`/cart/${}`);
+  // const addToCartHandler = () => {
+  //   const id = 6;
+  //   payload.quantity = quantity;
+  //   dispatch(addToCart(id, payload));
+  //   //history.push(`/cart/${id}`);
+  // };
+
+  const cartContext = useContext(CartContext);
+
+  //const price = `$${props.price.toFixed(2)}`;
+
+  const addToCartHandler = (quantity) => {
+    cartContext.addInventory({
+      name: payload.name,
+      quantity: quantity,
+      price: payload.price,
+      imageUrl: payload.imageUrl,
+      inventoryId: payload.id,
+    });
   };
 
   return (

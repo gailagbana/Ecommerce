@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
 import "./index.css";
+import { Dropdown } from "react-bootstrap";
+import AuthContext from "../store/authContext";
 
 const NavBar = ({ click, cart }) => {
   const [search, setSearch] = useState(true);
+  const authContext = useContext(AuthContext);
+
+  const isLoggedIn = authContext.isLoggedIn;
+
   return (
     <nav className="navbar">
       <div className="navbar__logo">
@@ -40,9 +45,29 @@ const NavBar = ({ click, cart }) => {
           </div>
         </li>
         <li>
-          <Link to="/user" className="userlogo">
-            <i class="fas fa-user"></i>
-          </Link>
+          <Dropdown>
+            <Dropdown.Toggle
+              className="dropdown__toggle"
+              style={{ backgroundColor: "#000", borderColor: "#000" }}
+              id="dropdown-basic"
+            >
+              <i class="fas fa-user"></i>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              {isLoggedIn && (
+                <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+              )}
+
+              {!isLoggedIn && (
+                <Dropdown.Item href="/auth">SignUp</Dropdown.Item>
+              )}
+              {isLoggedIn && (
+                <Dropdown.Item href="/logout">Logout</Dropdown.Item>
+              )}
+            </Dropdown.Menu>
+          </Dropdown>
+          {/* <Link to="/auth" className="userlogo"></Link> */}
         </li>
         <li>
           <Link to="/inventory" className="shop">
@@ -51,12 +76,12 @@ const NavBar = ({ click, cart }) => {
         </li>
 
         <li>
-          <div className="cart__link" onClick={cart}>
+          <Link to="/cart/:id" className="cart__link">
             <i className="fas fa-shopping-cart"></i>
             <span>
               <span className="cartlogo__badge">0</span>
             </span>
-          </div>
+          </Link>
         </li>
       </ul>
 

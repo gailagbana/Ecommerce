@@ -4,7 +4,7 @@ import CartContext from "./cartContext";
 
 const defaultCartState = {
   inventories: [],
-  totalQuantity: 0,
+  totalPrice: 0,
 };
 
 const cartReducer = (state, action) => {

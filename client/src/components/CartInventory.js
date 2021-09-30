@@ -1,16 +1,24 @@
 import "../components/index.css";
-import inventory_1 from "../assets/inventory_1.jpeg";
 
-const CartInventory = () => {
+const CartInventory = ({
+  price,
+  name,
+  onAdd,
+  onRemove,
+  imageUrl,
+  quantity,
+}) => {
+  const pricse = `$${price.toFixed(2)}`;
+
   return (
     <div className="cartinventory">
       <div className="cartinventory__image">
-        <img src={inventory_1} alt="..df" />
+        <img src={imageUrl} alt="stuff" />
       </div>
 
-      <div className="cartinventory__name">Product 1</div>
+      <div className="cartinventory__name">{name}</div>
 
-      <div className="cartinventory__price">45435</div>
+      <div className="cartinventory__price">{pricse}</div>
 
       {/* <select
         className="cartinventory__select"
@@ -23,12 +31,17 @@ const CartInventory = () => {
           </option>
         ))}
       </select> */}
-      <select className="cartinventory__select">
+      {/* <select className="cartinventory__select">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
-      </select>
+      </select> */}
 
+      <div className="cartInventory__button">
+        <button onClick={onRemove}>−</button>
+        <div>{quantity}</div>
+        <button onClick={onAdd}>+</button>
+      </div>
       <button className="cartinventory__deletebutton">
         <i class="far fa-trash-alt"></i>
       </button>

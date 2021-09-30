@@ -61,7 +61,7 @@ class CartService extends RootService {
             const { id } = request.params;
             if (!id) return next(this.processFailedResponse('Invalid ID supplied.'));
 
-            const result = await this.cartController.readRecords({ id, isActive: true });
+            const result = await this.cartController.readRecords({ userId: id, isActive: true });
             if (result.failed) {
                 throw new Error(result.error);
             } else {

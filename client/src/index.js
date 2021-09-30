@@ -3,15 +3,21 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 //import reportWebVitals from './reportWebVitals';
-
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import CartProvider from "./store/CartProvider";
+import AuthProvider from "./store/AuthProvider";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <AuthProvider>
+      <CartProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </CartProvider>
+    </AuthProvider>
   </Provider>,
   document.getElementById("root")
 );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//import { useSelector } from "react-redux";
 
 //Components
 //import ServerConnected from "./components/ServerConnected";
@@ -9,16 +10,17 @@ import {
   MenuBackdrop,
   MenuSideDrawer,
   NavBar,
-  useToken,
+  //useToken,
 } from "./components";
+
 //Pages
 import {
-  Login,
-  SignUp,
   CartPage,
   HomePage,
   InventoryDetails,
   InventoryPage,
+  Checkout,
+  Auth,
 } from "./pages";
 
 // function setToken(userToken) {
@@ -30,8 +32,9 @@ function App() {
 
   const [cartToggle, setCartToggle] = useState(false);
 
-  const { token, setToken } = useToken();
+  //const { token, setToken } = useToken();
 
+  //const user = useSelector((state) => state.user);
   // if (!token) {
   //   return <Login setToken={setToken} />;
   // }
@@ -52,9 +55,9 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/inventory" component={InventoryPage} />
           <Route exact path="/cart/:id" component={CartPage} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/auth" component={Auth} />
           <Route exact path="/inventory/:id" component={InventoryDetails} />
+          <Route exact path="/checkout/:id" component={Checkout} />
         </Switch>
       </main>
       {/* <ServerConnected /> */}

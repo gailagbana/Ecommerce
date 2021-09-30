@@ -6,22 +6,50 @@ const OrderSchema = new Schema({
         required: true,
         unique: true,
     },
-    userId: {
-        type: Number,
-        required: true,
+    user: {
+        name: {
+            type: String,
+            required: true,
+        },
+        address: {
+            type: String,
+            required: true,
+        },
+        postal: {
+            type: String,
+            required: true,
+        },
+        city: {
+            type: String,
+            required: true,
+        },
+        country: {
+            type: String,
+            required: true,
+        },
+        phoneNumber: {
+            type: String,
+            required: true,
+        },
     },
-    productId: {
+    orderedInventory: {
         type: Array,
         required: true,
     },
-    amount: {
-        type: Number,
-        required: true,
-    },
-    isActive: {
+    isVerified: {
         type: Boolean,
         required: true,
-        default: true,
+        default: false,
+    },
+    isShipped: {
+        type: Boolean,
+        required: true,
+        default: false,
+    },
+    isComplete: {
+        type: Boolean,
+        required: true,
+        default: false,
     },
     isDeleted: {
         type: Boolean,

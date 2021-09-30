@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Controller = require('../controllers/index');
 const orderSchemaValidator = require('../validators/order');
 
-const { isAdmin, isSeller, isAuthenticated } = require('../middlewares');
+// const { isAdmin, isSeller, isAuthenticated } = require('../middlewares');
 const orderController = new Controller('Order');
 const SampleService = require('../services/order/order.service');
 
@@ -10,7 +10,7 @@ const orderService = new SampleService(orderController, orderSchemaValidator);
 
 try {
     router
-        .use(isAuthenticated)
+        //.use(isAuthenticated)
         .post('/', async (request, response, next) => {
             request.payload = await orderService.createOrder(request, next);
             next();

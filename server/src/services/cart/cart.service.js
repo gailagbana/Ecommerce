@@ -33,19 +33,15 @@ class CartService extends RootService {
     async addInventoryToCart(request, next) {
         try {
             const { id } = request.params;
-            const { inventoryId } = request.body;
+            const { body } = request;
 
             if (!id) return next(this.processFailedResponse('Invalid ID supplied.'));
-            if (!inventoryId)
-                return next(this.processFailedResponse('Invalid inventory supplied.'));
+            if (!body) return next(this.processFailedResponse('Invalid inventory supplied.'));
 
-            const userCart = await this.cartController.readRecords({ id });
-            if (userCart.failed) throw new Error(userCart.error);
+            // const userCart = await this.cartController.readRecords({ id });
+            // if (userCart.failed) throw new Error(userCart.error);
 
-            const result = await this.cartController.updateRecords(
-                { id },
-                { $push: { productId: parseInt(inventoryId) } }
-            );
+            const result = await this.cartController.updateRecords({ id }, { ...body });
             if (result.failed) {
                 throw new Error(result.error);
             } else {
@@ -65,7 +61,7 @@ class CartService extends RootService {
             const { id } = request.params;
             if (!id) return next(this.processFailedResponse('Invalid ID supplied.'));
 
-            const result = await this.cartController.readRecords({ id, isActive: true });
+            const result = await this.cartController.readRecords({ userId: id, isActive: true });
             if (result.failed) {
                 throw new Error(result.error);
             } else {

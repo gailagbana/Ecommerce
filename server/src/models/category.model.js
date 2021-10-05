@@ -1,4 +1,3 @@
-
 const { model, Schema } = require('mongoose');
 
 const CategorySchema = new Schema({
@@ -11,9 +10,14 @@ const CategorySchema = new Schema({
         type: String,
         required: true,
     },
+    imageUrl: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     description: {
         type: String,
-        required: true
+        required: true,
     },
     isActive: {
         type: Boolean,

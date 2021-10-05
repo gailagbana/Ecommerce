@@ -12,9 +12,9 @@ const InventorySchema = new Schema({
     },
     categoryId: {
         type: Number,
-        required: true
+        required: true,
     },
-    name:{
+    name: {
         type: String,
         required: true,
     },
@@ -22,10 +22,14 @@ const InventorySchema = new Schema({
         type: String,
         required: true,
     },
-    quantity: {
-        type: Number, 
+    imageUrl: {
+        type: String,
         required: true,
-        default: 1
+    },
+    quantity: {
+        type: Number,
+        required: true,
+        default: 1,
     },
     price: {
         type: Number,
